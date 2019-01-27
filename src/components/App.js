@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AppRouter from './AppRouter';
 import Header from './main/Header';
 import './App.scss';
 
@@ -14,6 +15,7 @@ class App extends Component {
       <div className="App">
 
       <Header />
+      <AppRouter/>
       
       </div>
     );
