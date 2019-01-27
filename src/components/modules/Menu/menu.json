@@ -1,0 +1,7 @@
+[
+    {"name":"Home", "link": "/"}, 
+    {"name":"Catalog", "link": "/catalog"}, 
+    {"name":"About", "link": "/about"}, 
+    {"name":"Contacts", "link": "/contacts"},
+    {"name":"Gallery", "link": "/gallery"}
+]
