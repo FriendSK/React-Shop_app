@@ -6,7 +6,7 @@ const List = (props) => {
     return (
         <li key= {el.link}>
         
-        <link to={el.link}> {el.name}</link>
+        <Link to={el.link}> {el.name}</Link>
         </li>
     )
 })
