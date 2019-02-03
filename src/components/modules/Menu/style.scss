@@ -8,5 +8,10 @@
         display: block;
         font-size: 20px;
         color: white;
+
+        &.active {
+            background: #5bb541;
+            transition: 0.5s;
+        }
     }
 }
