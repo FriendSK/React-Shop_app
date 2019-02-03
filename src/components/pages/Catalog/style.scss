@@ -1,0 +1,42 @@
+.list-product {
+    display: flex;
+    flex-wrap: wrap;
+
+    .product {
+        width: 25%; 
+        
+        .wrap {
+            margin: 15px;
+            padding: 15px;
+            box-shadow:  0 0 6px 3px #00000075;
+            img {
+            max-width: 100%;
+            }
+            h4{
+                margin-top: 0;
+                height: 30px;
+            }
+            div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                span {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                input {
+                    font-size: 18px;
+                    background:  green;
+                    color: #fff;
+                    padding: 5px 10px;
+                    border: none;
+                    cursor: pointer;
+                    transition: 0.5s;
+                    &:hover {
+                        background: #26bd26;
+                    }
+                }
+            }
+        }
+    }
+}
