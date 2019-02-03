@@ -5,8 +5,11 @@ import products from '../../../data/products.json';
 
 const Catalog = () => {
     return (
-        <div className='page container'>
-        <ProductList products = {products} />
+        <div id='catalog' className='page container'>
+
+            <div className='list-product'>
+                <ProductList products={products} />
+            </div>
         </div>
     )
 
