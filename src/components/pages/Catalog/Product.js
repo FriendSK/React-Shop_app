@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Product = (props) => {
+const Product = ({data, addProduct}) => {
 
     const {
         name,
@@ -9,7 +9,7 @@ const Product = (props) => {
         price,
         image,
         country,
-    } = props.data;
+    } = data;
 
     return (
         <div className='product'>
@@ -23,6 +23,7 @@ const Product = (props) => {
                     <input
                         type='button'
                         value='add cart'
+                        onClick = {()=>addProduct(data)}
                     />
                 </div>
             </div>
