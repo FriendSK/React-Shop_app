@@ -1,12 +1,12 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const List = (props) => {
  return props.menu.map((el)=>{
     return (
         <li key= {el.link}>
         
-        <Link to={el.link}> {el.name}</Link>
+        <NavLink exact  to={el.link}> {el.name}  </NavLink>
         </li>
     )
 })
