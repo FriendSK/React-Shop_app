@@ -1,7 +1,9 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import ProductList from './ProductList'
 import './style.scss';
 import products from '../../../data/products.json';
+import { addProductAction } from '../../../actions/cart'
 
 const Catalog = (props) => {
     return (
@@ -17,5 +19,9 @@ const Catalog = (props) => {
     )
 
 }
-
-export default Catalog;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addProduct:  (product) => addProductAction (dispatch, product )
+    }
+}
+export default connect (null, mapDispatchToProps)(Catalog) ;

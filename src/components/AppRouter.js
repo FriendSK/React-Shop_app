@@ -12,13 +12,7 @@ const AppRouter = (props) => {
         <Switch>
 
         <Route exact path='/' component={Home} />
-        <Route exact path='/catalog' render={ ()=> 
-            < Catalog 
-                addProduct= {props .addProduct} 
-                /> 
-            } 
-                
-         />
+        <Route exact path='/catalog' component={Catalog}/> 
         <Route exact path='/gallery' component={Gallery} />
         <Route exact path='/about' component={About} />
         <Route exact path='/contacts' component={Contacts} />

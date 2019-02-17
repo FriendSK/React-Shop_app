@@ -1,19 +1,26 @@
 import React from 'react';
+import Head from './Head';
+import Body from './Body';
 import './style.scss';
+import {connect} from 'react-redux';
 
 
-const Cart= (props) => {
+const Cart= ({products}) => {
     return (
     <div id='cart'>
-        <h3> Cart</h3>
-        {
-                props.cartProducts.map(product => {
-                    return <p>{product.name}</p>
-                })
-        }
+       
+        <Head/>
+        <Body products={products}/>
+        
     </div>
 
     );
 }
-
-export default Cart;
+const mapStateToProps = (state) => {
+    return {
+        products:state.cart.products
+    }
+}
+export default connect(
+    mapStateToProps  
+)(Cart);

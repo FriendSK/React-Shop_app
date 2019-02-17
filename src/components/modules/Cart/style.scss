@@ -1,8 +1,42 @@
 #cart {
     width: 30%;
     text-align: right;
+    position: relative;
 
-    h3{
-        margin: 0;
+    #cart-body{
+        min-height: 200px;
+        background: #fff;
+        position: absolute;
+        z-index: 100;
+        top: 30px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 0 5px 3px black;
+        padding: 5px;
+
+        .cart-product {
+            display: flex;
+            height: 50px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            box-shadow: 0 0 3px 2px grey;
+            margin-bottom: 10px;
+
+            img {
+                max-width: 50px;
+            }
+            span {
+                width: 120px;
+                text-align: left;
+            }
+            u {
+                text-decoration: none;
+                color: red;
+                cursor: pointer;
+                padding: 5px;
+                font-size:  18px;
+            }
+        }
     }
 }

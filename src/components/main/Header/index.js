@@ -8,7 +8,7 @@ const Header = (props) => {
         <header> 
       <div className='container'>
       <Menu/>
-      <Cart cartProducts={props.cartProducts}/>
+      <Cart/>
 
        </div>
         </header>
