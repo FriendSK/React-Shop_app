@@ -10,7 +10,7 @@ const cart = (state = initialState, action) => {
     if (action.type === 'show') {
        
     }
-    if (action.type === ' SET_PRODUCT') {
+    if (action.type === 'SET_PRODUCT') {
        
 
         return {
