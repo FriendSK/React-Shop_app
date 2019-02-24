@@ -5,19 +5,72 @@ const initialState = {
     isShow: false
 }
 
+const upProduct = function (products, data, type ) {
+
+     let isUp = false;
+
+    const result = products.reduce((ac, product )=> {
+        if (product.id === data.id) {
+            isUp = true;
+
+            if(!type && product.count === 1){
+                return ac;
+        }
+
+            return ac.concat({
+                ...product,
+                count: type ? ++product.count : --product.count,
+                sum: product.count * product.price,
+            })
+        }
+        return ac.concat(product);
+    }, [])
+
+    return !isUp ? result.concat({
+        ...data,
+        count:1, 
+        sum: data.price 
+        }): result;
+}
+
 const cart = (state = initialState, action) => {
   
-    if (action.type === 'show') {
-       
-    }
-    if (action.type === ' SET_PRODUCT') {
-       
+   switch (action.type) {
 
+    case 'SET_PRODUCT': {
+       
         return {
             ...state,
-            products: [...state.products, action.product]
+            quantity: ++ state.quantity,
+            sum: parseFloat(state.sum) + parseFloat(action.product.price),
+            products: 
+            upProduct(
+                 state.products,
+                 action.product,
+                 true
+            )
         }
     }
-    return state;
+    case 'REMOVE_PRODUCT': {
+        return {
+            ...state,
+            quantity: -- state.quantity,
+            sum: parseFloat(state.sum) - parseFloat(action.product.price),
+            products: 
+            upProduct(
+                 state.products,
+                 action.product,
+                 false
+            )
+        }
+    }
+
+    default: return state;
+       
+    }
+
 }
+
+  
+
 export default cart;

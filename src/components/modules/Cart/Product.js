@@ -1,18 +1,23 @@
 import React from 'react';
+import Rounder from './Rounder'
 
 
-const Product = ({data}) => {
+const Product = ({ data, remove }) => {
 
-    const {name,  price, image } = data ;
+    const { name, sum, image, count, } = data;
 
+    
+    
     return (
-    <div className='cart-product'>
-    <img src = {image} alt=''></img>
-     <span>{name}</span>
-     <i>{price}</i>
-     <b>1</b>
-     <u>x</u>
-    </div>
+        <div className='cart-product'>
+            <img src={image} alt='' />
+            <span>{name}</span>
+            <i><Rounder sum={sum} sumbol = 'USD'/> </i>
+            <b>{count}</b>
+            <u 
+                onClick = {() => remove(data)}
+            >x</u>
+        </div>
 
     );
 }

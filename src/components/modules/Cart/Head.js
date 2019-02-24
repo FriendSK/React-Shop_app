@@ -1,11 +1,12 @@
 import React from 'react';
+import Rounder from './Rounder'
 
 
-const Head = (props) => {
+const Head = ({quantity, sum}) => {
     return (
     <div id='cart-head'>
-      <i>total quantity: 5</i>
-      <i>total sum: 5</i>
+      <i>total quantity: {quantity}</i>
+      <i>total sum: <Rounder sum={sum} sumbol = 'USD'/> </i>
     </div>
 
     );
