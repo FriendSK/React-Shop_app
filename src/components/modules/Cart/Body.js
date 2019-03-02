@@ -1,5 +1,6 @@
 import React from 'react';
 import  Product from './Product';
+import OrderForm from './OrderForm'
 
 const Body = ({products, remove}) => {
     return (
@@ -13,6 +14,7 @@ const Body = ({products, remove}) => {
                     />
                 })
             }
+            <OrderForm/>
         </div>
 
     );

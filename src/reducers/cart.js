@@ -33,6 +33,18 @@ const upProduct = function (products, data, type ) {
         }): result;
 }
 
+const getIsShowCart = (isShow, value) => {
+    if (value === 'hide') {
+        return false;
+    }
+    if (value === 'show') {
+        return true;
+    }
+    return !isShow;
+}
+
+
+
 const cart = (state = initialState, action) => {
   
    switch (action.type) {
@@ -62,6 +74,12 @@ const cart = (state = initialState, action) => {
                  action.product,
                  false
             )
+        }
+    }
+    case 'TOGGLE_SHOW_CART': {
+        return {
+            ...state, 
+            isShow: getIsShowCart ( state.isShow, action.value),
         }
     }
 

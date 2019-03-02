@@ -22,6 +22,7 @@ const Product = ({data, addProduct}) => {
                     <span>{price}</span>
                     <input
                         type='button'
+                        className='btn-add-product'
                         value='add cart'
                         onClick = {()=>addProduct(data)}
                     />
