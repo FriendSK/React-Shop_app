@@ -3,7 +3,8 @@ import Head from './Head';
 import Body from './Body';
 import './style.scss';
 import { connect } from 'react-redux';
-import { removeProductAction, toggleShowCartAction } from '../../../actions/cart'
+
+import { removeProductAction, toggleShowCartAction, queryOrderAction } from '../../../actions/cart';
 
 
 class Cart extends Component {
@@ -34,9 +35,10 @@ class Cart extends Component {
         if (!quantity && isShow) {
             toggle('hide')
         }
-
+      this.queryOrderHandler = () => {
+            this.props.queryOrder(this.props);
+        }
     }
-
     render() {
         const {
             products,
@@ -62,6 +64,7 @@ class Cart extends Component {
                         <Body
                             products={products}
                             remove={remove}
+                            queryOrderHandler={this.queryOrderHandler}
                         />
                         : ''
                 }
@@ -72,8 +75,9 @@ class Cart extends Component {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        remove: (product) => removeProductAction(dispatch, product),
-        toggle: (value) => toggleShowCartAction(dispatch, value)
+        remove: product => removeProductAction(dispatch, product),
+        toggle: value => toggleShowCartAction(dispatch, value),
+        queryOrder: data =>  queryOrderAction(dispatch, data)
 
     }
 }

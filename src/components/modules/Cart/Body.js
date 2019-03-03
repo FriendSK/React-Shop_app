@@ -2,7 +2,7 @@ import React from 'react';
 import  Product from './Product';
 import OrderForm from './OrderForm'
 
-const Body = ({products, remove}) => {
+const Body = ({products, remove, queryOrderHandler}) => {
     return (
         <div id='cart-body'>
             {
@@ -14,7 +14,7 @@ const Body = ({products, remove}) => {
                     />
                 })
             }
-            <OrderForm/>
+            <OrderForm queryOrderHandler={queryOrderHandler}/>
         </div>
 
     );
