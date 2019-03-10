@@ -4,7 +4,8 @@ import Body from './Body';
 import './style.scss';
 import { connect } from 'react-redux';
 
-import { removeProductAction, toggleShowCartAction, queryOrderAction } from '../../../actions/cart';
+import { removeProductAction, toggleShowCartAction, queryOrderAction,
+setPhoneAction, } from '../../../actions/cart';
 
 
 class Cart extends Component {
@@ -47,6 +48,9 @@ class Cart extends Component {
             quantity,
             isShow,
             toggle,
+            isErrorPhone,
+            isSuccessOrder,
+            setPhone,
         } = this.props;
 
 
@@ -62,8 +66,11 @@ class Cart extends Component {
                     isShow && quantity ?
 
                         <Body
+                            isErrorPhone={isErrorPhone}
+                            isSuccessOrder={isSuccessOrder}
                             products={products}
                             remove={remove}
+                            setPhone={setPhone}
                             queryOrderHandler={this.queryOrderHandler}
                         />
                         : ''
@@ -77,7 +84,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         remove: product => removeProductAction(dispatch, product),
         toggle: value => toggleShowCartAction(dispatch, value),
-        queryOrder: data =>  queryOrderAction(dispatch, data)
+        queryOrder: data =>  queryOrderAction(dispatch, data),
+        setPhone: data =>  setPhoneAction(dispatch, data)
 
     }
 }
@@ -88,6 +96,10 @@ const mapStateToProps = (state) => {
         quantity: state.cart.quantity,
         sum: state.cart.sum,
         isShow: state.cart.isShow,
+        isErrorPhone: state.cart.isErrorPhone,
+        isSuccessOrder: state.cart.isSuccessOrder,
+        phone: state.cart.phone,
+
     }
 }
 export default connect(

@@ -2,7 +2,10 @@ const initialState = {
     products: [],
     sum: 0,
     quantity: 0,
-    isShow: false
+    isShow: false,
+    isErrorPhone: false,
+    isSuccessOrder: false,
+    phone: '',
 }
 
 const upProduct = function (products, data, type ) {
@@ -80,6 +83,33 @@ const cart = (state = initialState, action) => {
         return {
             ...state, 
             isShow: getIsShowCart ( state.isShow, action.value),
+        }
+    }
+    case 'TOGGLE_SUCCESS_ORDER':{
+        return {
+            ...state,
+            isSuccessOrder: !state.isSuccessOrder
+        }
+    }
+
+    case 'TOGGLE_ERROR_PHONE':{
+        return {
+            ...state,
+            isErrorPhone: !state.isErrorPhone
+        }
+    }
+
+    case 'SET_ PHONE':{
+        return {
+            ...state,
+            phone: action.phone
+        }
+    }
+
+    case 'CLEAR_CART':{
+        return {
+            ...initialState,
+            quantity: 0,
         }
     }
 
