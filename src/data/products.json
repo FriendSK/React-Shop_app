@@ -5,9 +5,5 @@
 {"id":5,"name":"Bread - Kimel Stick Poly","manufacturer":"Mercury","price":"3353.91","image":"product.png","country":"Venezuela"},
 {"id":6,"name":"Veal - Brisket, Provimi, Bone - In","manufacturer":"Dodge","price":"5001.50","image":"product.png","country":"Canada"},
 {"id":7,"name":"Wine - Soave Folonari","manufacturer":"Mazda","price":"5601.40","image":"product.png","country":"Brazil"},
-{"id":8,"name":"Chicken - Base, Ultimate","manufacturer":"Porsche","price":"495.01","image":"product.png","country":"Mexico"},
-{"id":9,"name":"Beer - Paulaner Hefeweisse","manufacturer":"Dodge","price":"5678.69","image":"product.png","country":"Saint Kitts and Nevis"},
-{"id":10,"name":"Rice Paper","manufacturer":"Mercedes-Benz","price":"2638.00","image":"product.png","country":"Greece"},
-{"id":11,"name":"Melon - Honey Dew","manufacturer":"Audi","price":"6572.53","image":"product.png","country":"Sweden"},
-{"id":12,"name":"Latex Rubber Gloves Size 9","manufacturer":"Mercedes-Benz","price":"256.38","image":"product.png","country":"Indonesia"}
+{"id":8,"name":"Chicken - Base, Ultimate","manufacturer":"Porsche","price":"495.01","image":"product.png","country":"Mexico"}
 ]
