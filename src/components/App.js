@@ -7,7 +7,21 @@ import './App.scss';
 
 class App extends Component {
 
+
+constructor (props) {
+  super (props);
+  this.state = {
+    cartProducts: []
+  }
+}
   
+addProduct = (product) => {
+  let cartProducts = [...this.state.cartProducts, {...product}]
+
+  this.setState ({cartProducts})
+}
+
+
 
   render() {
    
@@ -17,8 +31,8 @@ class App extends Component {
       <BrowserRouter>
       <div className="App">
 
-      <Header />
-      <AppRouter/>
+      <Header   cartProducts={this.state.cartProducts} />
+      <AppRouter addProduct= {this.addProduct} />
       
       </div>
       </BrowserRouter>
