@@ -24,7 +24,8 @@ return (
                 />
             })
         }
-        <OrderForm queryOrderHandler={queryOrderHandler}
+        <OrderForm 
+            queryOrderHandler={queryOrderHandler}
             isErrorPhone={isErrorPhone}
             isSuccessOrder={isSuccessOrder}
             setPhone={setPhone}

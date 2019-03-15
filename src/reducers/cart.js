@@ -99,7 +99,7 @@ const cart = (state = initialState, action) => {
         }
     }
 
-    case 'SET_ PHONE':{
+    case 'SET_PHONE':{
         return {
             ...state,
             phone: action.phone
